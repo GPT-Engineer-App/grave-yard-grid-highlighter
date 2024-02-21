@@ -16,7 +16,7 @@ const Index = () => {
         {Array.from({ length: 10000 }, (_, index) => {
           const x = Math.floor(index / 100) + 1;
           const y = (index % 100) + 1;
-          return <GridItem key={index} w="10px" h="10px" bg="gray.700" borderRadius="md" onMouseEnter={() => handleGridItemHover(x, y)} />;
+          return <GridItem key={index} w="10px" h="10px" bg="gray.700" borderRadius="md" onClick={() => handleGridItemHover(x, y)} />;
         })}
       </Grid>
 
