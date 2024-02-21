@@ -1,4 +1,5 @@
-import { Box, Grid, GridItem, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Text, Button } from "@chakra-ui/react";
+import { Box, Grid, GridItem, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Text, Button, Icon } from "@chakra-ui/react";
+import { FaCross } from "react-icons/fa";
 import { useState } from "react";
 
 const Index = () => {
@@ -16,7 +17,11 @@ const Index = () => {
         {Array.from({ length: 10000 }, (_, index) => {
           const x = Math.floor(index / 100) + 1;
           const y = (index % 100) + 1;
-          return <GridItem key={index} w="10px" h="10px" bg="gray.700" borderRadius="md" onClick={() => handleGridItemHover(x, y)} />;
+          return (
+            <GridItem key={index} w="20px" h="20px" bg="gray.900" borderRadius="sm" position="relative" onClick={() => handleGridItemHover(x, y)}>
+              <Icon as={FaCross} position="absolute" top="1px" left="50%" transform="translateX(-50%)" color="white" w={3} h={3} />
+            </GridItem>
+          );
         })}
       </Grid>
 
