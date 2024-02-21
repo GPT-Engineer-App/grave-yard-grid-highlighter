@@ -18,7 +18,7 @@ const Index = () => {
           const x = Math.floor(index / 100) + 1;
           const y = (index % 100) + 1;
           return (
-            <GridItem key={index} w="20px" h="20px" bg="gray.900" borderRadius="sm" position="relative" onClick={() => handleGridItemHover(x, y)}>
+            <GridItem key={index} w="20px" h="20px" bg="gray.900" borderRadius="sm" position="relative" onClick={() => handleGridItemHover(x, y)} _hover={{ transform: "scale(1.1)", bg: "gray.700", cursor: "pointer" }} transition="transform 0.2s, background-color 0.2s">
               <Icon as={FaCross} position="absolute" top="1px" left="50%" transform="translateX(-50%)" color="white" w={3} h={3} />
             </GridItem>
           );
